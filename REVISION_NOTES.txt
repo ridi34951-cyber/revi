@@ -1,0 +1,16 @@
+GyroLock revision notes
+
+Changes in this revision:
+- Removed the opening animated zoom-out from the stabilized video renderer.
+- Kept a constant 1.075x safety crop on the VIDEO so the short clip can still cover
+  black/empty borders created by gyro stabilization.
+- Added a subtle, directional motion-blur blend for the first 180 ms of VIDEO only;
+  it fades quickly so the video becomes sharp.
+- The still photo is written through the existing photo path and is not zoomed or
+  processed by the video renderer.
+- Gyroscope sensor source and the rest of the stabilization pipeline were not changed.
+
+Important:
+- This is a source ZIP, not a prebuilt APK.
+- The project has not been compiled or device-tested in this environment. Build and
+  test on the target Android/Gradle setup before installing.
